@@ -1,5 +1,6 @@
 import 'package:crud_hospital_app/domain/hospital_provider.dart';
 import 'package:crud_hospital_app/presentation/pages/hospital_list_page.dart';
+import 'package:crud_hospital_app/presentation/pages/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HospitalListPage(),
+      home: SplashPage(),
     );
   }
 }
