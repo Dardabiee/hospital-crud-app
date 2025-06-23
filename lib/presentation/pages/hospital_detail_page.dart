@@ -32,13 +32,14 @@ class HospitalDetailPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: DefaultButton(
                 text: "Edit Data", 
-                press: (){
+                press: () async{
                 Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (_) => EditHospitalPage(hospital: hospital),
                  ),
               );
+              await Provider.of<HospitalProvider>(context, listen: false).loadHospitals();
             }),
             )
           ],

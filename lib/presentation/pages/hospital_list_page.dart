@@ -54,8 +54,11 @@ class _HospitalListPageState extends State<HospitalListPage> {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(
-                    onTap: () {
-                       Navigator.push(context, MaterialPageRoute(builder: (_) => HospitalDetailPage(hospital: hospital)));
+                    onTap: () async{
+                       Navigator.push(context, 
+                       MaterialPageRoute(builder: (_) => HospitalDetailPage(hospital: hospital))
+                       );
+                       await Provider.of<HospitalProvider>(context, listen: false).loadHospitals();
                     },
                     child: Card(
                       child: Padding(

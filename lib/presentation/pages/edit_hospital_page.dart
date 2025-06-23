@@ -1,3 +1,4 @@
+import 'package:crud_hospital_app/presentation/pages/hospital_list_page.dart';
 import 'package:crud_hospital_app/presentation/widgets/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -52,7 +53,7 @@ class _EditHospitalPageState extends State<EditHospitalPage> {
         await Provider.of<HospitalProvider>(context, listen: false)
             .loadHospitals();
 
-        if (context.mounted) Navigator.pop(context);
+        if (context.mounted) Navigator.push(context, MaterialPageRoute(builder: (_) => HospitalListPage()));
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Gagal update: $e')),
