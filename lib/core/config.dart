@@ -1,0 +1,1 @@
+const String baseUrl = "https://hospital-api-production-4225.up.railway.app";
